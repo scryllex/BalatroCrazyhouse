@@ -1,0 +1,10 @@
+{
+    "id": "Crazyhouse",
+    "name": "Crazyhouse",
+    "author": ["scryllex"],
+    "description": "",
+    "prefix": "czh",
+    "main_file": "main.lua",
+    "priority": 67,
+    "version": "0.0.1"
+}

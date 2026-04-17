@@ -1,0 +1,20 @@
+[manifest]
+version = "1.0.0"
+priority = 67
+
+[[patches]]
+[patches.pattern]
+target = "functions/misc_functions.lua"
+pattern = '''
+if hand[i]:is_suit(suit, nil, true) then flush_count = flush_count + 1;  t[#t+1] = hand[i] end 
+'''
+position = "after"
+match_indent = true
+times = 1
+payload = '''
+-- added by Crazyhouse
+if not hand[i]:is_suit(suit, nil, true) and suit ~= 'czh_Scurra' and hand[i]:is_suit('czh_Scurra', nil, true) then
+  flush_count = flush_count + 1
+  t[#t+1] = hand[i]
+end 
+'''
